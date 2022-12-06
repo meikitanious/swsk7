@@ -23,6 +23,17 @@
         <Spinner />
       </Ui>
     </Player>
+    <vds-media id="video">
+      <vds-hls 
+      autoplay
+      muted
+      loop
+      playsinline
+      style="pointer-events: none;"
+      loading="eager" 
+      <video src="https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8">
+      </vds-hls>
+    </vds-media>
     <div class="hero-content">
         <h1>We Tackle Your <br>Growth Problems</h1>
         <p>Scalewhale is a Paid Media agency<br> with expertise in Analytics, and MarOps</p>

@@ -3,7 +3,6 @@
   import { Autoplay } from 'swiper';
   import "swiper/css";
 	import { onMount } from "svelte";
-  import { Player, Ui, Spinner } from '@vime/svelte';
 
   let logosPerView = 0;
   let darkMode = false;
@@ -15,14 +14,17 @@
 
 <div class="main-page">
   <section class="hero">
-    <Player id="video" autoplay muted loop playsinline >
-      <Hls version="latest">
-        <source data-src="https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8" type="application/x-mpegURL" />
-      </Hls>
-      <Ui>
-        <Spinner />
-      </Ui>
-    </Player>
+    <vds-media id="video">
+      <vds-hls 
+      autoplay
+      muted
+      loop
+      playsinline
+      style="pointer-events: none;"
+      loading="eager" 
+      <video src="https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8">
+      </vds-hls>
+    </vds-media>
     <div class="hero-content">
         <h1>We Tackle Your <br>Growth Problems</h1>
         <p>Scalewhale is a Paid Media agency<br> with expertise in Analytics, and MarOps</p>
