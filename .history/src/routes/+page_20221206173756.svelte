@@ -14,7 +14,6 @@
 
 <div class="main-page">
   <section class="hero">
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
     <video autoplay="autoplay" muted loop id="video" playsinline style="pointer-events: none;"></video>
     <script>
 				var video = document.getElementById('video');
@@ -33,6 +32,7 @@
         hls.attachMedia(video);
         }
 		</script>
+  
     <div class="hero-content">
         <h1>We Tackle Your <br>Growth Problems</h1>
         <p>Scalewhale is a Paid Media agency<br> with expertise in Analytics, and MarOps</p>
