@@ -14,21 +14,9 @@
 
 <div class="main-page">
   <section class="hero">
-    <video autoplay="autoplay" muted loop id="video" playsinline style="pointer-events: none;"></video>
-    <script>
-			if (Hls.isSupported()) {
-				const video = document.getElementById('video');
-				const hls = new Hls();
-				hls.attachMedia(video);
-				hls.on(Hls.Events.MEDIA_ATTACHED, () => {
-					hls.loadSource(
-						'https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8'
-					);
-				});
-			}
-
-			video.play();
-		</script>
+    <video autoplay="autoplay" muted loop id="video" playsinline style="pointer-events: none;">
+        <source src="/videos/whales.mp4" type="video/mp4" />
+    </video>
     <div class="hero-content">
         <h1>We Tackle Your <br>Growth Problems</h1>
         <p>Scalewhale is a Paid Media agency<br> with expertise in Analytics, and MarOps</p>
