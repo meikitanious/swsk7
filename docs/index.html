@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="./_app/immutable/assets/_layout-91ee8f4f.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/_page-888b12b5.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-7e650b6e.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-a41dc320.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-bb52d7fe.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-5b96e945.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/navigation-7c18be12.js">
+		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.ts-b8ee4d7c.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-1daba58d.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-7eb5fb18.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_commonjsHelpers-456b4ed0.js">
+		<link rel="icon" href="/images/icon-blue.svg">
+		<title>Scalewhale</title>
+	</head>
+	<body>
+		<div style="display: contents">
+
+
+<nav class="light-mode  svelte-8m0ma5"><div class="nav-body svelte-8m0ma5"><div class="links svelte-8m0ma5"><a href="/services" class="svelte-8m0ma5">Services</a>
+			<a href="/testimonials" class="svelte-8m0ma5">Testimonials</a>
+			<a href="/blog" class="svelte-8m0ma5">Blog</a>
+			</div>
+		<a id="get-in-touch" href="/contact" class="svelte-8m0ma5"><span class="svelte-8m0ma5">Get in Touch</span></a>
+		<div class="sm-links svelte-8m0ma5"><a href="https://www.linkedin.com/company/scalewhaleagency/" target="_blank" class="svelte-8m0ma5"><img src="/images/sm-icons/lnkdn.svg" alt="LinkedIn Icon" class="svelte-8m0ma5"></a>
+			<a href="https://www.instagram.com" class="svelte-8m0ma5"><img src="/images/sm-icons/inst.svg" alt="Instagram Icon" class="svelte-8m0ma5"></a>
+			<a href="https://www.discord.com" class="svelte-8m0ma5"><img src="/images/sm-icons/dsc.svg" alt="Discord Icon" class="svelte-8m0ma5"></a>
+			<a href="https://www.twitter.com" class="svelte-8m0ma5"><img src="/images/sm-icons/tw.svg" alt="Twitter Icon" class="svelte-8m0ma5"></a></div></div></nav>
+<header class="light-mode svelte-8m0ma5"><div class="header svelte-8m0ma5"><a href="/" id="icon" class="svelte-8m0ma5"><img src="/images/icon.svg" alt="Scalewhale Blue Icon" class="svelte-8m0ma5"></a>
+		<div class="controls svelte-8m0ma5"><div id="toggle" class="svelte-8m0ma5"><img src="/images/sun.svg" alt="Sun Icon" class="svelte-8m0ma5">
+				<img src="/images/moon.svg" alt="Moon Icon" class="svelte-8m0ma5">
+				<div id="circle" style="transform: translateX(46px)" class="svelte-8m0ma5"></div></div>
+			<div id="menu" class=" svelte-8m0ma5"><div class="line svelte-8m0ma5"></div>
+				<div class="line svelte-8m0ma5"></div></div></div></div></header>
+<main class="light-mode svelte-8m0ma5"><div class="main-page svelte-zh1v7o"><section class="hero svelte-zh1v7o"><script src="https://cdn.jsdelivr.net/npm/hls.js@1" class="svelte-zh1v7o"></script>
+    <video autoplay="autoplay" muted loop id="video" playsinline style="pointer-events: none;" class="svelte-zh1v7o"></video>
+    <script class="svelte-zh1v7o">var video = document.getElementById('video');
+				var videoSrc = 'https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8';
+				  //
+          // First check for native browser HLS support
+          //
+        if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+         //
+        // If no native HLS support, check if HLS.js is supported
+        //
+        } else if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+        }
+		</script>
+    <div class="hero-content svelte-zh1v7o"><h1 class="svelte-zh1v7o">We Tackle Your <br class="svelte-zh1v7o">Growth Problems</h1>
+        <p class="svelte-zh1v7o">Scalewhale is a Paid Media agency<br class="svelte-zh1v7o"> with expertise in Analytics, and MarOps</p>
+        <a style="color: black" id="get-in-touch" href="/contact" class="svelte-zh1v7o">Get in Touch</a></div></section>
+  <section class="container svelte-zh1v7o"><div class="clients svelte-zh1v7o"><h2 class="svelte-zh1v7o">We&#39;ve had the pleasure<br class="svelte-zh1v7o"> of working with:</h2>
+      </div></section>
+</div>
+</main>
+
+
+		<script type="module" data-sveltekit-hydrate="yjzq3j">
+			import { start } from "./_app/immutable/start-7e650b6e.js";
+
+			start({
+				env: {},
+				hydrate: {
+					status: 200,
+					error: null,
+					node_ids: [0, 2],
+					params: {},
+					route: {"id":"/"},
+					data: [null,null],
+					form: null
+				},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="yjzq3j"]').parentNode,
+				version: "1670363065444"
+			});
+		</script>
+	</div>
+	</body>
+</html>
