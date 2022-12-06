@@ -5,6 +5,7 @@
 	import { onMount } from "svelte";
   import '@vidstack/player/define/vds-media.js';
   import '@vidstack/player/define/vds-hls.js';
+
   let logosPerView = 0;
   let darkMode = false;
 
@@ -23,7 +24,7 @@
       playsinline
       style="pointer-events: none;"
       loading="eager" 
-      <video src="https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8">
+        <video src="https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8"></video>
       </vds-hls>
     </vds-media>
     <div class="hero-content">
