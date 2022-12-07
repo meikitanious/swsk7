@@ -3,19 +3,34 @@
   import { Autoplay } from 'swiper';
   import "swiper/css";
 	import { onMount } from "svelte";
+  import "video.js";
+  import "videojs-http-streaming.js";
 
   let logosPerView = 0;
   let darkMode = false;
-
   onMount(() => {
     logosPerView = window.innerWidth > 1200 ? 3 : window.innerWidth > 500 ? 2 : 1;
   });
 </script>
+
 <div class="main-page">
   <section class="hero">
-    <video autoplay="autoplay" muted loop id="video" playsinline style="pointer-events: none;">
-        <source src="/videos/whales.mp4" type="video/mp4" />
-    </video>
+    <video-js
+    id="video"
+    class="video-js" 
+    autoplay="autoplay" 
+    muted 
+    loop 
+    playsinline 
+    style="point-events: none;">
+  <source src="https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8" type="application/x-mpegURL">
+  </video-js>
+  <script src="video.js"></script>
+  <script src="videojs-http-streaming.js"></script>
+  <script>
+    const vid = document.getElementById('video');
+    const player = videojs(vid);
+  </script>
     <div class="hero-content">
         <h1>We Tackle Your <br>Growth Problems</h1>
         <p>Scalewhale is a Paid Media agency<br> with expertise in Analytics, and MarOps</p>
