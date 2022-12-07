@@ -6,14 +6,15 @@
 		<meta http-equiv="content-security-policy" content="">
 		<link href="./_app/immutable/assets/_layout-91ee8f4f.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/_page-888b12b5.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/start-245bf030.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index-a41dc320.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-bb52d7fe.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-5b96e945.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/navigation-7c18be12.js">
+		<link rel="modulepreload" href="./_app/immutable/start-6df76f6c.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-f4ba683f.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-7743c584.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-74bcf8a1.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/navigation-8397e12a.js">
 		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.ts-b8ee4d7c.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-1daba58d.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-85280715.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-8e2137e2.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/___vite-browser-external_commonjs-proxy-59d37ece.js">
 		<link rel="icon" href="/images/icon-blue.svg">
 		<title>Scalewhale</title>
 	<body>
@@ -35,20 +36,10 @@
 				<div id="circle" style="transform: translateX(46px)" class="svelte-8m0ma5"></div></div>
 			<div id="menu" class=" svelte-8m0ma5"><div class="line svelte-8m0ma5"></div>
 				<div class="line svelte-8m0ma5"></div></div></div></div></header>
-<main class="light-mode svelte-8m0ma5"><div class="main-page svelte-zh1v7o"><section class="hero svelte-zh1v7o"><video id="video" autoplay="autoplay" muted loop playsinline style="point-events: none;" class="svelte-zh1v7o"></video>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.2.8/dist/hls.min.js" class="svelte-zh1v7o"></script>
-		<script class="svelte-zh1v7o">if (Hls.isSupported()) {
-				const video = document.getElementById('video');
-				const hls = new Hls();
-				hls.attachMedia(video);
-				hls.on(Hls.Events.MEDIA_ATTACHED, () => {
-					hls.loadSource(
-						'https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8'
-					);
-				});
-			}
-			video.play();
-		</script>
+<main class="light-mode svelte-8m0ma5"><div class="main-page svelte-zh1v7o"><section class="hero svelte-zh1v7o"><video-js id="video" class="video-js svelte-zh1v7o" autoplay="autoplay" muted loop playsinline style="point-events: none;"><source src="https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8" type="application/x-mpegURL" class="svelte-zh1v7o"></video-js>
+  <script class="svelte-zh1v7o">const vid = document.getElementById('video');
+    const player = videojs(vid);
+  </script>
     <div class="hero-content svelte-zh1v7o"><h1 class="svelte-zh1v7o">We Tackle Your <br class="svelte-zh1v7o">Growth Problems</h1>
         <p class="svelte-zh1v7o">Scalewhale is a Paid Media agency<br class="svelte-zh1v7o"> with expertise in Analytics, and MarOps</p>
         <a style="color: black" id="get-in-touch" href="/contact" class="svelte-zh1v7o">Get in Touch</a></div></section>
@@ -58,8 +49,8 @@
 </main>
 
 
-		<script type="module" data-sveltekit-hydrate="n49zhp">
-			import { start } from "./_app/immutable/start-245bf030.js";
+		<script type="module" data-sveltekit-hydrate="1becf84">
+			import { start } from "./_app/immutable/start-6df76f6c.js";
 
 			start({
 				env: {},
@@ -73,8 +64,8 @@
 					form: null
 				},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="n49zhp"]').parentNode,
-				version: "1670368049859"
+				target: document.querySelector('[data-sveltekit-hydrate="1becf84"]').parentNode,
+				version: "1670449799341"
 			});
 		</script>
 	</div>

@@ -22,8 +22,9 @@
     muted 
     loop 
     playsinline 
-    style="point-events: none;">
-  <source src="https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8" type="application/x-mpegURL">
+    style="point-events: none;"
+    data-setup='{}'>
+  <source src="https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8" type="application/x-mpegURL"></source>
   </video-js>
   <script>
     const vid = document.getElementById('video');
