@@ -3,7 +3,7 @@
   import { Autoplay } from 'swiper';
   import "swiper/css";
 	import { onMount } from "svelte";
-
+  import { Lottie } from 'lottie-svelte';
   let logosPerView = 0;
   let darkMode = false;
   onMount(() => {
