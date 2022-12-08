@@ -6,16 +6,17 @@
 		<meta http-equiv="content-security-policy" content="">
 		<link href="./_app/immutable/assets/_layout-4964e112.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/_page-f79b1c05.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/start-1c1f0e06.js">
+		<link rel="modulepreload" href="./_app/immutable/start-f839f86f.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index-a41dc320.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-bb52d7fe.js">
 		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-5b96e945.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/navigation-7c18be12.js">
 		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.ts-b8ee4d7c.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-1daba58d.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-5a934578.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-27806f7f.js">
 		<link rel="icon" href="/images/icon-blue.svg">
 		<title>Scalewhale</title>
+		<script src="//cdn.jsdelivr.net/npm/hls.js@latest"></script>
 	<body>
 		<div style="display: contents">
 
@@ -35,7 +36,19 @@
 				<div id="circle" style="transform: translateX(46px)" class="svelte-8m0ma5"></div></div>
 			<div id="menu" class=" svelte-8m0ma5"><div class="line svelte-8m0ma5"></div>
 				<div class="line svelte-8m0ma5"></div></div></div></div></header>
-<main class="light-mode svelte-8m0ma5"><div class="main-page svelte-1kk9vbi"><section class="hero svelte-1kk9vbi"><video autoplay="autoplay" muted loop id="video" playsinline style="pointer-events: none;" class="svelte-1kk9vbi"><source src="/videos/whales-720.mp4" type="video/mp4" class="svelte-1kk9vbi"></video>
+<main class="light-mode svelte-8m0ma5"><div class="main-page svelte-1kk9vbi"><section class="hero svelte-1kk9vbi"><video autoplay="autoplay" muted loop id="video" playsinline style="pointer-events: none;" class="svelte-1kk9vbi"></video>
+    <script class="svelte-1kk9vbi">if (Hls.isSupported()) {
+				const video = document.getElementById('video');
+				const hls = new Hls();
+				hls.attachMedia(video);
+				hls.on(Hls.Events.MEDIA_ATTACHED, () => {
+					hls.loadSource(
+						'https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8'
+					);
+				});
+			}
+			video.play();
+		</script>
   <script type="text/javascript" class="svelte-1kk9vbi">function makeURL(object) {
         return (window.URL) ? window.URL.createObjectURL(object) :    
         window.webkitURL.createObjectURL(object);
@@ -57,8 +70,8 @@
 </main>
 
 
-		<script type="module" data-sveltekit-hydrate="1cf2mfo">
-			import { start } from "./_app/immutable/start-1c1f0e06.js";
+		<script type="module" data-sveltekit-hydrate="14p40yu">
+			import { start } from "./_app/immutable/start-f839f86f.js";
 
 			start({
 				env: {},
@@ -72,8 +85,8 @@
 					form: null
 				},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1cf2mfo"]').parentNode,
-				version: "1670462102409"
+				target: document.querySelector('[data-sveltekit-hydrate="14p40yu"]').parentNode,
+				version: "1670462374297"
 			});
 		</script>
 	</div>
