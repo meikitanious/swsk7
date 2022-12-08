@@ -14,6 +14,14 @@
 <div class="main-page">
   <section class="hero">
     <Lottie id="video" path="/videos/whales-720.mp4.lottie.json" speed={0.2}/>
+    <video autoplay="autoplay" muted loop id="video" playsinline style="pointer-events: none;">
+        <source src="/videos/whales-720.mp4" type="video/mp4" />
+    </video>
+    <video autoplay loop muted playsinline style="pointer-events: none;" id="video">
+      <source src="/videos/whales.mp4" type="video/mp4"  />
+      <source src="/videos/whales.webm" type="video/webm" />
+      <source src="/videos/whales.ogv" type="video/ogv" />
+  </video>
     <div class="hero-content">
         <h1>We Tackle Your <br>Growth Problems</h1>
         <p>Scalewhale is a Paid Media agency<br> with expertise in Analytics, and MarOps</p>

@@ -4,16 +4,17 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
-		<link href="./_app/immutable/assets/_layout-4964e112.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/_page-f79b1c05.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/start-f839f86f.js">
+		<link href="./_app/immutable/assets/_layout-91ee8f4f.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/_page-6b315170.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-a0060316.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index-a41dc320.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-bb52d7fe.js">
 		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-5b96e945.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/navigation-7c18be12.js">
 		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.ts-b8ee4d7c.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-1daba58d.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-27806f7f.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-190a8540.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_commonjsHelpers-456b4ed0.js">
 		<link rel="icon" href="/images/icon-blue.svg">
 		<title>Scalewhale</title>
 		<script src="//cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -36,42 +37,18 @@
 				<div id="circle" style="transform: translateX(46px)" class="svelte-8m0ma5"></div></div>
 			<div id="menu" class=" svelte-8m0ma5"><div class="line svelte-8m0ma5"></div>
 				<div class="line svelte-8m0ma5"></div></div></div></div></header>
-<main class="light-mode svelte-8m0ma5"><div class="main-page svelte-1kk9vbi"><section class="hero svelte-1kk9vbi"><video autoplay="autoplay" muted loop id="video" playsinline style="pointer-events: none;" class="svelte-1kk9vbi"></video>
-    <script class="svelte-1kk9vbi">if (Hls.isSupported()) {
-				const video = document.getElementById('video');
-				const hls = new Hls();
-				hls.attachMedia(video);
-				hls.on(Hls.Events.MEDIA_ATTACHED, () => {
-					hls.loadSource(
-						'https://customer-si5cxun7zm99ttrb.cloudflarestream.com/38201dc5c5d26f789caf61e77babb163/manifest/video.m3u8'
-					);
-				});
-			}
-			video.play();
-		</script>
-  <script type="text/javascript" class="svelte-1kk9vbi">function makeURL(object) {
-        return (window.URL) ? window.URL.createObjectURL(object) :    
-        window.webkitURL.createObjectURL(object);
-      }
-      async function display(videoStream){
-        var myvideo = document.getElementById('video');
-        let blob = await fetch(videoStream).then(r => r.blob());
-        var videoUrl= makeURL(blob);
-        myvideo.src = videoUrl;
-      }
-      display('/videos/whales.mp4');
-    </script>
-    <div class="hero-content svelte-1kk9vbi"><h1 class="svelte-1kk9vbi">We Tackle Your <br class="svelte-1kk9vbi">Growth Problems</h1>
-        <p class="svelte-1kk9vbi">Scalewhale is a Paid Media agency<br class="svelte-1kk9vbi"> with expertise in Analytics, and MarOps</p>
-        <a style="color: black" id="get-in-touch" href="/contact" class="svelte-1kk9vbi">Get in Touch</a></div></section>
-  <section class="container svelte-1kk9vbi"><div class="clients svelte-1kk9vbi"><h2 class="svelte-1kk9vbi">We&#39;ve had the pleasure<br class="svelte-1kk9vbi"> of working with:</h2>
+<main class="light-mode svelte-8m0ma5"><div class="main-page svelte-zh1v7o"><section class="hero svelte-zh1v7o"><div id="a85e26b9-7d53-43b6-82c3-89017dc0d224"></div>
+    <div class="hero-content svelte-zh1v7o"><h1 class="svelte-zh1v7o">We Tackle Your <br class="svelte-zh1v7o">Growth Problems</h1>
+        <p class="svelte-zh1v7o">Scalewhale is a Paid Media agency<br class="svelte-zh1v7o"> with expertise in Analytics, and MarOps</p>
+        <a style="color: black" id="get-in-touch" href="/contact" class="svelte-zh1v7o">Get in Touch</a></div></section>
+  <section class="container svelte-zh1v7o"><div class="clients svelte-zh1v7o"><h2 class="svelte-zh1v7o">We&#39;ve had the pleasure<br class="svelte-zh1v7o"> of working with:</h2>
       </div></section>
 </div>
 </main>
 
 
-		<script type="module" data-sveltekit-hydrate="14p40yu">
-			import { start } from "./_app/immutable/start-f839f86f.js";
+		<script type="module" data-sveltekit-hydrate="1w7nbku">
+			import { start } from "./_app/immutable/start-a0060316.js";
 
 			start({
 				env: {},
@@ -85,8 +62,8 @@
 					form: null
 				},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="14p40yu"]').parentNode,
-				version: "1670462374297"
+				target: document.querySelector('[data-sveltekit-hydrate="1w7nbku"]').parentNode,
+				version: "1670464425088"
 			});
 		</script>
 	</div>
