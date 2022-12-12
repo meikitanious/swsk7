@@ -3,26 +3,24 @@
   import { Autoplay } from 'swiper';
   import "swiper/css";
 	import { onMount } from "svelte";
-
-  let logosPerView = 0;
-  let darkMode = false;
-  onMount(() => {
-    logosPerView = window.innerWidth > 1200 ? 3 : window.innerWidth > 500 ? 2 : 1;
-  });
-  onMount(async () => {
-  const posthog = (await import("posthog-js")).default;
-  posthog.init('phc_ksb2H9Z1IYSj0Kr4sZjnHH09IBOEOpbzLkh2z43qjcw',{ 
+  import posthog from 'posthog-js'
+    posthog.init('phc_ksb2H9Z1IYSj0Kr4sZjnHH09IBOEOpbzLkh2z43qjcw',{ 
       api_host: 'https://app.posthog.com', 
       autocapture: false,
       capture_pageview: false,
       cross_subdomain_cookie: true,
       enable_recording_console_log: true,
+      secure_cookie: true,
       session_recording:{
         maskAllInputs: false
       }
       });
   posthog.captureposthog.capture('$pageview');
-})
+  let logosPerView = 0;
+  let darkMode = false;
+  onMount(() => {
+    logosPerView = window.innerWidth > 1200 ? 3 : window.innerWidth > 500 ? 2 : 1;
+  });
 </script>
 
 <div class="main-page">

@@ -17,6 +17,7 @@
       capture_pageview: false,
       cross_subdomain_cookie: true,
       enable_recording_console_log: true,
+      secure_cookie: true,
       session_recording:{
         maskAllInputs: false
       }
