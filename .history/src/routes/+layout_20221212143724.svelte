@@ -1,4 +1,5 @@
 <script>
+export const prerender = true;
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import '../app.postcss';

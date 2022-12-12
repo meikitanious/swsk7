@@ -15,21 +15,6 @@
 			localStorage.setItem('darkMode', 'false');
 		}
 	})
-onMount(async () => {
-    const posthog = (await import("posthog-js")).default;
-    posthog.init('phc_ksb2H9Z1IYSj0Kr4sZjnHH09IBOEOpbzLkh2z43qjcw',{ 
-        api_host: 'https://app.posthog.com', 
-        autocapture: false,
-        capture_pageview: false,
-        cross_subdomain_cookie: true,
-        enable_recording_console_log: true,
-        secure_cookie: true,
-        session_recording:{
-          maskAllInputs: false
-        }
-        });
-    posthog.capture('$pageview');
-  })
 </script>
 
 <nav class="{ darkMode ? 'dark-mode' : 'light-mode' } { showNav ? 'nav-visible' : '' }">

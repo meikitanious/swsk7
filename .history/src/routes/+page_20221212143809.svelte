@@ -13,7 +13,7 @@
 
 <div class="main-page">
   <section class="hero">
-    <video muted loop id="hero-video" playsinline autoplay style="pointer-events: none;">
+    <video muted loop id="video" playsinline autoplay style="pointer-events: none;">
         <source src="/videos/whales-720.mp4" type="video/mp4" />
     </video>
     <div class="hero-content">

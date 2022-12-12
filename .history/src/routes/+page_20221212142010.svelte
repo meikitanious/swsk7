@@ -9,11 +9,26 @@
   onMount(() => {
     logosPerView = window.innerWidth > 1200 ? 3 : window.innerWidth > 500 ? 2 : 1;
   });
+  onMount(async () => {
+  const posthog = (await import("posthog-js")).default;
+  posthog.init('phc_ksb2H9Z1IYSj0Kr4sZjnHH09IBOEOpbzLkh2z43qjcw',{ 
+      api_host: 'https://app.posthog.com', 
+      autocapture: false,
+      capture_pageview: false,
+      cross_subdomain_cookie: true,
+      enable_recording_console_log: true,
+      secure_cookie: true,
+      session_recording:{
+        maskAllInputs: false
+      }
+      });
+  posthog.capture('$pageview');
+})
 </script>
 
 <div class="main-page">
   <section class="hero">
-    <video muted loop id="hero-video" playsinline autoplay style="pointer-events: none;">
+    <video muted loop id="video" playsinline autoplay style="pointer-events: none;">
         <source src="/videos/whales-720.mp4" type="video/mp4" />
     </video>
     <div class="hero-content">
