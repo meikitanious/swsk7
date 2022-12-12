@@ -3,6 +3,7 @@
   import { Autoplay } from 'swiper';
   import "swiper/css";
 	import { onMount } from "svelte";
+
   let logosPerView = 0;
   let darkMode = false;
   onMount(() => {
@@ -13,7 +14,7 @@
 <div class="main-page">
   <section class="hero">
     <video muted loop id="video" playsinline autoplay style="pointer-events: none;">
-        <source src="/videos/whales.mp4" type="video/mp4" />
+        <source src="/videos/whales-720.mp4" type="video/mp4" />
     </video>
     <div class="hero-content">
         <h1>We Tackle Your <br>Growth Problems</h1>
