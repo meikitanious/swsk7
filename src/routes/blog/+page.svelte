@@ -3,31 +3,21 @@
   import { goto } from '$app/navigation';
   import { onMount } from 'svelte';
 	import postcss from 'postcss';
+  export let data;
 
   let blogPosts: any = [];
   let categories: any = [];
 
   onMount(async () => {
-    blogPosts = await load();
-    blogPosts.sort(function( a , b){
-      if(Number(a.attributes.order) > Number(b.attributes.order)) return 1;
-      if(Number(a.attributes.order) < Number(b.attributes.order)) return -1;
-      return 0;
-    });
+    blogPosts = data;
     categories = categorize(blogPosts);
   })
-
-  export const load: Load = async () => {
-  const res = await fetch('https://jellyfish-app-9zisi.ondigitalocean.app/api/categories?populate=*');
-    const response = await res.json();
-    return response.data;
-  };
 
   const categorize = (array: any) => {
     let categories: any = [];
 
-    array.forEach((item: any) => {
-      if (!categories.includes(item.attributes.category) && item.attributes.visible_on_homepage) categories.push(item.attributes.category);
+    array.data.forEach((item: any) => {
+      if (!categories.includes(item.attributes.category.data.attributes.category_title)) categories.push(item.attributes.category.data.attributes.category_title);
     });
 
     return categories;
@@ -36,34 +26,30 @@
 
   <div class="main--blog--page">
     <div class="container">
-      {#if (blogPosts.length > 0)}
       {#each categories as category}
         <div class="blog--row--wrapper">
           <h1 class="blog--category">{category}</h1>
           <div class="blog--row">
-            {#each blogPosts as postCategory}
-              {#each postCategory.attributes.posts.data as post}
-                {#if (postCategory.attributes.category == category && postCategory.attributes.visible_on_homepage)}
-                  <div class="blog--post" on:click={() => goto('/blog/' + post.attributes.Slug)}>
-                    <span class="blog--post-category">{postCategory.attributes.category}</span>
-                    <h2 class="blog--post--title">{post.attributes.title}</h2>
-                    <div class="blog--post--data">
-                      <span class="blog--post--author">{post.attributes.author}</span>
-                      <div class="blog--post--likes">
-                        <img src="/images/heart.svg" alt="Heart Icon">
-                        <span>
-                          {post.attributes.likes}
-                        </span>
-                      </div>
+            {#each blogPosts.data as post} 
+              {#if post.attributes.category.data.attributes.category_title === category}
+                <div class="blog--post" on:click={() => goto('/blog/' + post.attributes.slug)}>
+                  <span class="blog--post-category">{category}</span>
+                  <h2 class="blog--post--title">{post.attributes.blog_title}</h2>
+                  <div class="blog--post--data">
+                    <span class="blog--post--author">{post.attributes.author.data.attributes.author_name}</span>
+                    <div class="blog--post--likes">
+                      <img src="/images/heart.svg" alt="Heart Icon">
+                      <span>
+                        {post.attributes.default_likes}
+                      </span>
                     </div>
                   </div>
-                {/if}
-              {/each}
+                </div>
+              {/if}
             {/each}
           </div>
         </div>
       {/each}
-    {/if}
     </div>
   </div>
 
