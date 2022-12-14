@@ -60,7 +60,6 @@
         .then(response => response.json())
         .then(async result => {
           liked = false;
-
         })
         .catch(error => console.log('error', error));
     }
