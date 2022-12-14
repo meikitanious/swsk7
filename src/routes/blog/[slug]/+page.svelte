@@ -13,21 +13,9 @@
   export let data;
 
   onMount(async () => {
-    blogPost = await loadData(data.slug);
-    likes = blogPost[0].attributes.likes;
+    blogPost = data;
+    likes = blogPost[0].attributes.default_likes
   })
-
-  export const loadData: Load = async (slug) => {
-  const res = await fetch(`https://jellyfish-app-9zisi.ondigitalocean.app/api/posts?filters[slug][$eq]=${slug}`);
-    const response = await res.json();
-
-    if (res.status !== 200) {
-      goto('/error');
-      return;
-    }
-
-    return response.data;
-  };
 
   const updateLikes = (blogPost, data) => {
     if (!liked) {
@@ -46,7 +34,7 @@
         body: raw
       };
 
-      fetch(`https://jellyfish-app-9zisi.ondigitalocean.app/api/posts/${blogPost[0].id}`, requestOptions)
+      fetch(`https://324128124.scalewhale.com/api/blogs/${blogPost[0].id}`, requestOptions)
         .then(response => response.json())
         .then(result => {
           liked = true;
@@ -68,7 +56,7 @@
         body: raw
       };
 
-      fetch(`https://jellyfish-app-9zisi.ondigitalocean.app/api/posts/${blogPost[0].id}`, requestOptions)
+      fetch(`https://324128124.scalewhale.com/api/blogs/${blogPost[0].id}`, requestOptions)
         .then(response => response.json())
         .then(async result => {
           liked = false;
@@ -84,10 +72,10 @@
     <img src="/images/back.svg" alt="Back Arrow">
   </div>
   <div class="blog--page">
-    {#if (blogPost.length > 0)} 
-      <h1 class="blog--title">{blogPost[0].attributes.title}</h1>
-      <div class="blog--author">by {blogPost[0].attributes.author}</div>
-      <p class="blog--content">{@html blogPost[0].attributes.content}</p>
+    {#if (blogPost[0] !== undefined)} 
+      <h1 class="blog--title">{blogPost[0].attributes.blog_title}</h1>
+      <div class="blog--author">by {blogPost[0].attributes.author.data.attributes.author_name}</div>
+      <p class="blog--content">{@html blogPost[0].attributes.blog_content}</p>
       <div class="controls">
         <div class="blog--likes {liked ? "liked" : ""}" on:click={async () => { 
           await updateLikes(blogPost, likes, data)

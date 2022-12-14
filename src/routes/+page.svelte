@@ -3,18 +3,32 @@
   import { Autoplay } from 'swiper';
   import "swiper/css";
 	import { onMount } from "svelte";
+
   let logosPerView = 0;
   let darkMode = false;
+
   onMount(() => {
     logosPerView = window.innerWidth > 1200 ? 3 : window.innerWidth > 500 ? 2 : 1;
+
+    const videoElement = document.getElementById('video');
+    const bgImg = document.getElementById('img-background');
+
+    videoElement?.addEventListener('suspend', () => {
+      if (bgImg !== null && window.innerWidth > 400) {
+        bgImg.style.display = 'block';
+        videoElement.style.display = 'none';
+      }
+    });
   });
 </script>
 
 <div class="main-page">
   <section class="hero">
-    <video muted loop id="video" playsinline autoplay style="pointer-events: none;">
+    <video autoplay="autoplay" muted loop id="video" playsinline style="pointer-events: none;">
         <source src="/videos/whales.mp4" type="video/mp4" />
     </video>
+    <div id="img-background">
+    </div>
     <div class="hero-content">
         <h1>We Tackle Your <br>Growth Problems</h1>
         <p>Scalewhale is a Paid Media agency<br> with expertise in Analytics, and MarOps</p>
@@ -74,6 +88,14 @@
 </div>
 
 <style lang=scss>
+  #img-background {
+    background: url('https://cdn.discordapp.com/attachments/1029151819772985414/1052038805118525480/ezgif-frame-003.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 250px);
+    display: none;
+  }
+
   .main-page {
     height: calc(100vh - 100px);
     overflow: hidden;
@@ -83,11 +105,13 @@
       position: relative;
       height: calc(100% - 150px);
       width: 100%;
+
       #video {
         height: 100%;
         width: 100%;
         object-fit: cover;
       }
+
       .hero-content {
         position: absolute;
         top: 50%;
@@ -96,11 +120,13 @@
         color: white;
         @include flex(column, center, center);
         row-gap: 10px;
+
         h1 {
           font-size: 700%;
           font-weight: 800;
           text-align: center;
         }
+
         p {
           font-size: 350%;
           text-align: center;
@@ -108,6 +134,7 @@
         }
       }
     }
+
     .clients {
       @include flex(row, center, space-between);
       height: 150px;
@@ -118,10 +145,12 @@
         font-weight: 600;
         width: 50%;
       }
+
       .swiper-slide {
         a {
           @include flex(row, center, center);
         }
+
         display: -webkit-box;
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -134,8 +163,10 @@
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+
         a {
           text-decoration: none;
+
           img {
             height: 150px;
             object-fit: contain;
