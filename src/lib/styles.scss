@@ -283,7 +283,7 @@ main {
     }
   }
 
-  .hero #get-in-touch,
+  .hero-content #get-in-touch,
   nav #get-in-touch {
     font-size: 230% !important;
   }
@@ -394,8 +394,8 @@ main {
     }
   }
 
-  .hero #get-in-touch,
-  nav #get-in-touch {
+  .hero-content #get-in-touch,
+  nav #get-in-touch, {
     font-size: 180% !important;
   }
 
@@ -430,7 +430,21 @@ main {
   }
 
   .blog--row {
-    justify-content: center !important;
+    grid-template-columns: 1fr 1fr !important;
+    row-gap: 20px !important;
+  }
+
+  .main--blog--page,
+  .blog--page {
+    padding: 0 20px 50px 20px !important;
+  }
+
+  #back {
+    left: 20px;
+  }
+
+  .blog--post {
+    font-size: 90% !important;
   }
 }
 
@@ -493,6 +507,28 @@ main {
           position: static !important;
           transform-origin: center !important;
         }
+      }
+    }
+  }
+
+  .blog--post--data {
+    height: 40% !important;
+    gap: 10px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+
+    .blog--post--likes {
+      width: 100% !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+    }
+  }
+
+  .main--blog--page {
+    .hero-content {
+      h1,
+      p {
+        width: 95% !important;
       }
     }
   }
@@ -602,9 +638,42 @@ main {
   .contact-now {
     max-width: 300px !important;
   }
+
+  #back {
+    transform: scale(0.7) !important;
+  }
+
+  .blog--row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .blog--post--data {
+    width: 100% !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    
+    .blog--author {
+      width: auto !important;
+    }
+
+    .blog--post--likes {
+      width: auto !important;
+      height: 100% !important;
+      @include flex(row, center, center);
+    }
+  }
 }
 
 @media screen and (max-width: 320px) {
+  .blog--page {
+    padding: 0 10px !important;
+  }
+
+  #back {
+    left: 5px !important;
+    transform: scale(0.5) !important;
+  }
+
   .services {
     font-size: 30% !important;
     padding: 25px 0 !important;

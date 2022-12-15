@@ -15,7 +15,8 @@
 			localStorage.setItem('darkMode', 'false');
 		}
 	})
-onMount(async () => {
+	
+	onMount(async () => {
     const posthog = (await import("posthog-js")).default;
     posthog.init('phc_ksb2H9Z1IYSj0Kr4sZjnHH09IBOEOpbzLkh2z43qjcw',{ 
         api_host: 'https://app.posthog.com', 

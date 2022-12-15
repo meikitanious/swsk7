@@ -6,21 +6,56 @@
 
   let logosPerView = 0;
   let darkMode = false;
+  let meta;
+  export let data;
 
   onMount(() => {
+    meta = data;
+    const os = getMobileOS()
+
     logosPerView = window.innerWidth > 1200 ? 3 : window.innerWidth > 500 ? 2 : 1;
 
-    const videoElement = document.getElementById('video');
-    const bgImg = document.getElementById('img-background');
+    if (window.innerWidth < 500 && os === 'iOS') {
+      const videoElement = document.getElementById('video');
+      const bgImg = document.getElementById('img-background');
 
-    videoElement?.addEventListener('suspend', () => {
-      if (bgImg !== null && window.innerWidth > 400) {
-        bgImg.style.display = 'block';
-        videoElement.style.display = 'none';
-      }
-    });
+      videoElement?.addEventListener('suspend', () => {
+        if (bgImg !== null && window.innerWidth > 400) {
+          bgImg.style.display = 'block';
+          videoElement.style.display = 'none';
+        }
+      });
+    }
   });
+
+  const getMobileOS = () => {
+    const ua = navigator.userAgent
+    if (/android/i.test(ua)) {
+      return "Android"
+    }
+    else if (/iPad|iPhone|iPod/.test(ua) || navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1){
+      return "iOS"
+    }
+    return "Other"
+  }
 </script>
+
+<svelte:head>
+  {#if meta !== undefined}
+    <meta property="og:title" content={meta.meta.data.attributes.seo[0].metaTitle} />
+    <meta property="og:description" content={meta.meta.data.attributes.seo[0].metaDescription} />
+    <meta property="og:robots" content={meta.meta.data.attributes.seo[0].metaRobots} />
+    <meta property="og:viewport" content={meta.meta.data.attributes.seo[0].metaViewport} />
+    <meta property="og:canonical" content={meta.meta.data.attributes.seo[0].canonicalURL} />
+    <meta property="og:image" content={meta.meta.data.attributes.seo[0].metaImage.data.attributes.url} />
+    {#each meta.meta.data.attributes.seo[0].metaSocial as social }
+      <meta property="{social.socialNetwork}:title" content={social.title} />
+      <meta property="{social.socialNetwork}:url" content={social.url} />
+      <meta property="{social.socialNetwork}:description" content={social.description} />
+      <meta property="{social.socialNetwork}:image" content={social.image.data.attributes.url} />
+    {/each}
+  {/if}
+</svelte:head>
 
 <div class="main-page">
   <section class="hero">

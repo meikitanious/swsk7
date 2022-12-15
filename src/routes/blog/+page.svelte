@@ -5,12 +5,16 @@
 	import postcss from 'postcss';
   export let data;
 
-  let blogPosts: any = [];
-  let categories: any = [];
+  let blogPosts: any;
+  let blogHomepage: any;
+  let categories: any;
 
   onMount(async () => {
-    blogPosts = data;
-    categories = categorize(blogPosts);
+    if (data !== undefined) {
+      blogPosts = data.blogs
+      categories = categorize(blogPosts);
+      blogHomepage = data.blogHomepage;
+    }
   })
 
   const categorize = (array: any) => {
@@ -26,34 +30,47 @@
 
   <div class="main--blog--page">
     <div class="container">
-      {#each categories as category}
-        <div class="blog--row--wrapper">
-          <h1 class="blog--category">{category}</h1>
-          <div class="blog--row">
-            {#each blogPosts.data as post} 
-              {#if post.attributes.category.data.attributes.category_title === category}
-                <div class="blog--post" on:click={() => goto('/blog/' + post.attributes.slug)}>
-                  <span class="blog--post-category">{category}</span>
-                  <h2 class="blog--post--title">{post.attributes.blog_title}</h2>
-                  <div class="blog--post--data">
-                    <span class="blog--post--author">{post.attributes.author.data.attributes.author_name}</span>
-                    <div class="blog--post--likes">
-                      <img src="/images/heart.svg" alt="Heart Icon">
-                      <span>
-                        {post.attributes.default_likes}
-                      </span>
+      {#if blogHomepage !== undefined}
+        <div class="hero-content" style="background-image: url({blogHomepage.data.attributes.bg_image.data.attributes.url})">
+          <h1>{blogHomepage.data.attributes.heading}</h1>
+          <p>{blogHomepage.data.attributes.description}</p>
+          <a id="get-in-touch" href={blogHomepage.data.attributes.cta_link}>{blogHomepage.data.attributes.cta_text}</a>
+        </div>
+      {/if}
+      {#if blogPosts !== undefined && categories !== undefined}
+        {#each categories as category}
+          <div class="blog--row--wrapper">
+            <h1 class="blog--category">{category}</h1>
+            <div class="blog--row">
+              {#each blogPosts.data as post} 
+                {#if post.attributes.category.data.attributes.category_title === category}
+                  <div class="blog--post" on:click={() => goto('/blog/' + post.attributes.slug)}>
+                    <span class="blog--post-category">{category}</span>
+                    <h2 class="blog--post--title">{post.attributes.blog_title}</h2>
+                    <div class="blog--post--data">
+                      <div class="blog--author">
+                        <img src={post.attributes.author.data.attributes.author_pfp.data.attributes.url} alt="Author Pic">
+                        <span class="blog--post--author">{post.attributes.author.data.attributes.author_name}</span>
+                      </div>
+                      <div class="blog--post--likes">
+                        <img src="/images/heart.svg" alt="Heart Icon">
+                        <span>
+                          {post.attributes.default_likes}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              {/if}
-            {/each}
+                {/if}
+              {/each}
+            </div>
           </div>
-        </div>
-      {/each}
+        {/each}
+      {/if}
     </div>
   </div>
 
 <style lang=scss>
+
   .main--blog--page {
     height: 100%;
     width: 100%;
@@ -82,9 +99,10 @@
     }
 
     .blog--row {
-      @include flex(row, flex-start, flex-start);
-      flex-wrap: wrap;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      
 
       .blog--post {
         transition: all ease-in-out .3s;
@@ -96,7 +114,7 @@
         }
 
         height: 220px;
-        width: 380px;
+        width: 100%;
         background-color: #e5e5e5;
         border: 2.5px solid #e5e5e5;
         color: #000107;
@@ -141,6 +159,42 @@
           }
         }
       }
+    }
+  }
+
+  .hero-content {
+    border-radius: 5px;
+    height: 50vh;
+    color: white;
+    @include flex(column, center, center);
+    row-gap: 10px;
+    background-position: center;
+    background-size: cover;
+
+    h1 {
+      font-size: 700%;
+      font-weight: 800;
+      text-align: center;
+      width: 80%;
+    }
+
+    p {
+      font-size: 350%;
+      text-align: center;
+      font-weight: 600;
+      width: 80%;
+    }
+  }
+
+  .blog--author {
+    @include flex(row, center, center);
+    gap: 10px;
+
+    img {
+      height: 30px;
+      width: 30px;
+      object-fit: cover;
+      border-radius: 100%;
     }
   }
 </style>

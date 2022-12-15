@@ -24,7 +24,7 @@
 
       let raw = `{
         "data": {
-          "likes": ${blogPost[0].attributes.likes + 1}
+          "default_likes": ${blogPost[0].attributes.default_likes + 1}
         }
       }`;
 
@@ -46,7 +46,7 @@
 
       let raw = `{
         "data": {
-          "likes": ${blogPost[0].attributes.likes}
+          "default_likes": ${blogPost[0].attributes.default_likes}
         }
       }`;
 
@@ -74,7 +74,7 @@
     {#if (blogPost[0] !== undefined)} 
       <h1 class="blog--title">{blogPost[0].attributes.blog_title}</h1>
       <div class="blog--author">by {blogPost[0].attributes.author.data.attributes.author_name}</div>
-      <p class="blog--content">{@html blogPost[0].attributes.blog_content}</p>
+      <div class="blog--content" id="blog--content">{@html blogPost[0].attributes.blog_content}</div>
       <div class="controls">
         <div class="blog--likes {liked ? "liked" : ""}" on:click={async () => { 
           await updateLikes(blogPost, likes, data)
@@ -136,13 +136,13 @@
 
   #back {
     transition: .2s;
-    position: relative;
+    position: absolute;
     width: 55px;
     height: 55px;
-    top: 30px;
     opacity: 1;
+    top: 10px;
 
-    background-color: #101019;
+    background: none;
     border: 2px solid white;
     box-shadow: 0 0 15px rgba(255, 255, 255, .3);
     border-radius: 100%;
@@ -328,5 +328,41 @@
         }
       }
     }
+  }
+
+  #blog--content {
+    width: 100%;
+    font-size: 150% !important;
+
+    :global(p) {
+      margin: 7px 0px;
+    } 
+
+    :global(a) {
+      border-bottom: 2px solid white;
+    }
+
+    :global(img) {
+      width: 100%;
+      border: none;
+    }
+
+    :global(code) {
+      background-color: #F6FAFD;
+      padding: 5px 10px;
+      color: black;
+      display: inline-block;
+      font-family: monospace;
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  .container {
+    padding: 0px !important;
+  }
+
+  .blog--page {
+    width: 100% !important;
   }
 </style>
