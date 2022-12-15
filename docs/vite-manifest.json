@@ -217,9 +217,9 @@
     "file": "_app/immutable/assets/_page-e31ce374.css",
     "src": "src/routes/contact/+page.css"
   },
-  "src/routes/blog/+page.css": {
-    "file": "_app/immutable/assets/_page-52dbe749.css",
-    "src": "src/routes/blog/+page.css"
+  "src/routes/+page.css": {
+    "file": "_app/immutable/assets/_page-877dedc3.css",
+    "src": "src/routes/+page.css"
   },
   "src/routes/blog/[slug]/+page.css": {
     "file": "_app/immutable/assets/_page-de3af0b6.css",
@@ -229,20 +229,20 @@
     "file": "_app/immutable/assets/_page-046fe896.css",
     "src": "src/routes/testimonials/+page.css"
   },
-  "src/routes/+layout.css": {
-    "file": "_app/immutable/assets/_layout-04fac4dc.css",
-    "src": "src/routes/+layout.css"
-  },
-  "src/routes/+page.css": {
-    "file": "_app/immutable/assets/_page-877dedc3.css",
-    "src": "src/routes/+page.css"
-  },
   "src/routes/+error.css": {
     "file": "_app/immutable/assets/_error-712d98a6.css",
     "src": "src/routes/+error.css"
   },
+  "src/routes/blog/+page.css": {
+    "file": "_app/immutable/assets/_page-52dbe749.css",
+    "src": "src/routes/blog/+page.css"
+  },
   "src/routes/services/+page.css": {
     "file": "_app/immutable/assets/_page-3439350f.css",
     "src": "src/routes/services/+page.css"
+  },
+  "src/routes/+layout.css": {
+    "file": "_app/immutable/assets/_layout-04fac4dc.css",
+    "src": "src/routes/+layout.css"
   }
 }
