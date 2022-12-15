@@ -15,7 +15,7 @@
 
     logosPerView = window.innerWidth > 1200 ? 3 : window.innerWidth > 500 ? 2 : 1;
 
-    if (window.innerWidth < 500 && os === 'iOS') {
+    if (window.innerWidth < 500) {
       const videoElement = document.getElementById('video');
       const bgImg = document.getElementById('img-background');
 

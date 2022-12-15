@@ -37,7 +37,7 @@
 	<div class="nav-body">
 		<div class="links">
 			<a href="/services" on:click={() => showNav = false}>Services</a>
-			<a href="/testimonials" on:click={() => showNav = false}>Testimonials</a>
+			<!-- <a href="/testimonials" on:click={() => showNav = false}>Testimonials</a> -->
 			<a href="/blog" on:click={() => showNav = false}>Blog</a>
 			<!-- <a href="/academy">Academy</a> -->
 		</div>
