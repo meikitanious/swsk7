@@ -7,7 +7,7 @@ export async function load({data, fetch}) {
   }
 
   const fetchBlogHomepage = async () => {
-    const response = await fetch(`https://324128124.scalewhale.com/api/blog-page-header?populate=*`);
+    const response = await fetch(`https://324128124.scalewhale.com/api/blog-page-header?populate=*&populate=bg_image&populate=seo&populate=seo.metaImage&populate=seo.metaSocial.image`);
     const blogHomepage = await response.json();
     return blogHomepage
   }

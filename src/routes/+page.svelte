@@ -11,11 +11,10 @@
 
   onMount(() => {
     meta = data;
-    const os = getMobileOS()
 
     logosPerView = window.innerWidth > 1200 ? 3 : window.innerWidth > 500 ? 2 : 1;
 
-    if (window.innerWidth < 500) {
+    if (window.innerWidth > 500) {
       const videoElement = document.getElementById('video');
       const bgImg = document.getElementById('img-background');
 
@@ -27,17 +26,6 @@
       });
     }
   });
-
-  const getMobileOS = () => {
-    const ua = navigator.userAgent
-    if (/android/i.test(ua)) {
-      return "Android"
-    }
-    else if (/iPad|iPhone|iPod/.test(ua) || navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1){
-      return "iOS"
-    }
-    return "Other"
-  }
 </script>
 
 <svelte:head>

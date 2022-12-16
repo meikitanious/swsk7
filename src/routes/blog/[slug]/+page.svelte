@@ -14,6 +14,7 @@
 
   onMount(async () => {
     blogPost = data;
+    console.log(blogPost);
     likes = blogPost[0].attributes.default_likes
   })
 
@@ -65,6 +66,23 @@
     }
   }
 </script>
+
+<svelte:head>
+{#if (blogPost[0] !== undefined && blogPost[0].attributes.seo.length > 0)} 
+  <meta property="og:title" content={blogPost[0].attributes.seo[0].metaTitle} />
+  <meta property="og:description" content={blogPost[0].attributes.seo[0].metaDescription} />
+  <meta property="og:robots" content={blogPost[0].attributes.seo[0].metaRobots} />
+  <meta property="og:viewport" content={blogPost[0].attributes.seo[0].metaViewport} />
+  <meta property="og:canonical" content={blogPost[0].attributes.seo[0].canonicalURL} />
+  <meta property="og:image" content={blogPost[0].attributes.seo[0].metaImage.data.attributes.url} />
+  {#each blogPost[0].attributes.seo[0].metaSocial as social }
+      <meta property="{social.socialNetwork}:title" content={social.title} />
+      <meta property="{social.socialNetwork}:url" content={social.url} />
+      <meta property="{social.socialNetwork}:description" content={social.description} />
+      <meta property="{social.socialNetwork}:image" content={social.image.data.attributes.url} />
+    {/each}
+{/if}
+</svelte:head>
 
 <div class="container">
   <div id="back" on:click={() => goto('/blog')}>

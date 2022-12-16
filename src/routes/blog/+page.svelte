@@ -12,8 +12,10 @@
   onMount(async () => {
     if (data !== undefined) {
       blogPosts = data.blogs
-      categories = categorize(blogPosts);
-      blogHomepage = data.blogHomepage;
+      categories = categorize(blogPosts)
+      blogHomepage = data.blogHomepage
+      console.log(blogPosts)
+      console.log(blogHomepage)
     }
   })
 
@@ -27,6 +29,23 @@
     return categories;
   }
 </script>
+
+  <svelte:head>
+    {#if blogHomepage !== undefined}
+      <meta property="og:title" content={blogHomepage.data.attributes.seo[0].metaTitle} />
+      <meta property="og:description" content={blogHomepage.data.attributes.seo[0].metaDescription} />
+      <meta property="og:robots" content={blogHomepage.data.attributes.seo[0].metaRobots} />
+      <meta property="og:viewport" content={blogHomepage.data.attributes.seo[0].metaViewport} />
+      <meta property="og:canonical" content={blogHomepage.data.attributes.seo[0].canonicalURL} />
+      <meta property="og:image" content={blogHomepage.data.attributes.seo[0].metaImage.data.attributes.url} />
+      {#each blogHomepage.data.attributes.seo[0].metaSocial as social }
+        <meta property="{social.socialNetwork}:title" content={social.title} />
+        <meta property="{social.socialNetwork}:url" content={social.url} />
+        <meta property="{social.socialNetwork}:description" content={social.description} />
+        <meta property="{social.socialNetwork}:image" content={social.image.data.attributes.url} />
+      {/each}
+    {/if}
+  </svelte:head>
 
   <div class="main--blog--page">
     <div class="container">
