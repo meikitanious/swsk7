@@ -1,0 +1,4 @@
+Host do_caddy
+    HostName 68.183.138.235
+    User root
+    IdentityFile /Users/m/do_key.pub
