@@ -19,7 +19,7 @@
 	onMount(async () => {
     const posthog = (await import("posthog-js")).default;
     posthog.init('phc_ksb2H9Z1IYSj0Kr4sZjnHH09IBOEOpbzLkh2z43qjcw',{ 
-        api_host: 'https://8218322813.scalewhale.com', 
+        api_host: '8218322813.scalewhale.com', 
         autocapture: false,
         capture_pageview: false,
         cross_subdomain_cookie: true,
