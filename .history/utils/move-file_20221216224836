@@ -1,0 +1,4 @@
+import {moveFile} from 'move-file';
+
+await moveFile('./utils/bloglist.json', './src/lib/);
+console.log('The file has been moved');

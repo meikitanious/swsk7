@@ -1,6 +1,6 @@
 {
   "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
-    "file": "_app/immutable/start-7600a3d7.js",
+    "file": "_app/immutable/start-a33ce82b.js",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -20,7 +20,7 @@
     ]
   },
   "src/routes/+layout.svelte": {
-    "file": "_app/immutable/components/pages/_layout.svelte-cc24c6c8.js",
+    "file": "_app/immutable/components/pages/_layout.svelte-3c2bdfe4.js",
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "imports": [
@@ -144,7 +144,7 @@
     "file": "_app/immutable/chunks/_layout-1daba58d.js"
   },
   ".svelte-kit/generated/nodes/0.js": {
-    "file": "_app/immutable/chunks/0-73001937.js",
+    "file": "_app/immutable/chunks/0-24064af9.js",
     "src": ".svelte-kit/generated/nodes/0.js",
     "isDynamicEntry": true,
     "imports": [
@@ -209,17 +209,25 @@
     ]
   },
   "node_modules/posthog-js/dist/es.js": {
-    "file": "_app/immutable/chunks/es-00c81052.js",
+    "file": "_app/immutable/chunks/es-685b6b77.js",
     "src": "node_modules/posthog-js/dist/es.js",
     "isDynamicEntry": true
-  },
-  "src/routes/+error.css": {
-    "file": "_app/immutable/assets/_error-712d98a6.css",
-    "src": "src/routes/+error.css"
   },
   "src/routes/contact/+page.css": {
     "file": "_app/immutable/assets/_page-e31ce374.css",
     "src": "src/routes/contact/+page.css"
+  },
+  "src/routes/blog/[slug]/+page.css": {
+    "file": "_app/immutable/assets/_page-de3af0b6.css",
+    "src": "src/routes/blog/[slug]/+page.css"
+  },
+  "src/routes/blog/+page.css": {
+    "file": "_app/immutable/assets/_page-52dbe749.css",
+    "src": "src/routes/blog/+page.css"
+  },
+  "src/routes/+page.css": {
+    "file": "_app/immutable/assets/_page-877dedc3.css",
+    "src": "src/routes/+page.css"
   },
   "src/routes/services/+page.css": {
     "file": "_app/immutable/assets/_page-3439350f.css",
@@ -229,17 +237,9 @@
     "file": "_app/immutable/assets/_page-046fe896.css",
     "src": "src/routes/testimonials/+page.css"
   },
-  "src/routes/blog/+page.css": {
-    "file": "_app/immutable/assets/_page-52dbe749.css",
-    "src": "src/routes/blog/+page.css"
-  },
-  "src/routes/blog/[slug]/+page.css": {
-    "file": "_app/immutable/assets/_page-de3af0b6.css",
-    "src": "src/routes/blog/[slug]/+page.css"
-  },
-  "src/routes/+page.css": {
-    "file": "_app/immutable/assets/_page-877dedc3.css",
-    "src": "src/routes/+page.css"
+  "src/routes/+error.css": {
+    "file": "_app/immutable/assets/_error-712d98a6.css",
+    "src": "src/routes/+error.css"
   },
   "src/routes/+layout.css": {
     "file": "_app/immutable/assets/_layout-04fac4dc.css",

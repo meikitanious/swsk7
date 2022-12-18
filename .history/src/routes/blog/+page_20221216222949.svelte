@@ -3,7 +3,8 @@
   import { goto } from '$app/navigation';
   import { onMount } from 'svelte';
 	import postcss from 'postcss';
-  export let data;
+  import data from './utils/bloglist.json' assert { type: 'json'};
+   /* export let data;*/
 
   let blogPosts: any;
   let blogHomepage: any;
@@ -13,9 +14,6 @@
     if (data !== undefined) {
       blogPosts = data.blogs
       categories = categorize(blogPosts)
-      blogHomepage = data.blogHomepage
-      console.log(blogPosts)
-      console.log(blogHomepage)
     }
   })
 
@@ -49,13 +47,6 @@
 
   <div class="main--blog--page">
     <div class="container">
-      {#if blogHomepage !== undefined}
-        <div class="hero-content" style="background-image: url({blogHomepage.data.attributes.bg_image.data.attributes.url})">
-          <h1>{blogHomepage.data.attributes.heading}</h1>
-          <p>{blogHomepage.data.attributes.description}</p>
-          <a id="get-in-touch" href={blogHomepage.data.attributes.cta_link}>{blogHomepage.data.attributes.cta_text}</a>
-        </div>
-      {/if}
       {#if blogPosts !== undefined && categories !== undefined}
         {#each categories as category}
           <div class="blog--row--wrapper">
